@@ -223,7 +223,7 @@ class StripChart(Gtk.DrawingArea):
                         and a value for each curve.
         """
         if len(self.tiempos):
-            borrar_valor = int((self.tiempos[0] - self.tiempos[-1]).total_seconds()) == int(self.duracion)
+            borrar_valor = int((hora - self.tiempos[-1]).total_seconds()) > int(self.duracion)
         else:
             borrar_valor= False
         for v,c in zip(valores,self.curvas):
@@ -261,8 +261,8 @@ def test():
         chart.add_valores(datetime.now(), random.randint(vmin, vmax), random.randint(20,30), random.randint(70,90))
         return True
 
-    intervalo_muestreo = 1
-    duracion = 1 * 60
+    intervalo_muestreo = 3
+    duracion = 60
     vmin = 0
     vmax = 45
     sep = 10
