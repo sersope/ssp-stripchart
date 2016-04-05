@@ -82,15 +82,17 @@ class StripChart(Gtk.DrawingArea):
         self.cursor_on = False
 
     def _on_mouse_enter(self, widget, event):
-        self.cursor_on = True
+        if len(self.tiempos):
+            self.cursor_on = True
 
     def _on_mouse_leave(self, widget, event):
         self.cursor_on = False
         self.queue_draw()
 
     def _on_mouse_move(self, widget, cursor):
-        self.cursor_x = cursor.x
-        self.queue_draw()
+        if len(self.tiempos):
+            self.cursor_x = cursor.x
+            self.queue_draw()
         return False
 
     def _on_draw(self, widget, ct):
@@ -126,40 +128,41 @@ class StripChart(Gtk.DrawingArea):
 
         # Cursor y etiquetas del cursor
         secs = (self.b_izq + self.g_ancho - self.cursor_x) * self.duracion / self.g_ancho
-        cursor_t = self.tiempos[0] - timedelta(seconds = secs)
-        if cursor_t >= self.tiempos[-1] and cursor_t <= self.tiempos[0] and self.cursor_on:
-            # Linea vertical
-            ct.set_line_width(0.8)
-            ct.set_source_rgb(*Color.negro)
-            x = self.cursor_x
-            ct.move_to(x, self.b_sup)
-            ct.rel_line_to(0, self.g_alto)
-            ct.stroke()
-            # Indice para encontrar los valores Y apuntados por el cursor
-            cursor_i = 0
-            dt_min = float('inf')
-            for i,t in enumerate(self.tiempos):
-                dt = abs((cursor_t - t).total_seconds())
-                if  dt < dt_min:
-                    dt_min = dt
-                    cursor_i = i
-            # Texto a mostrar
-            # primero se calcula su extension para colocarlo a un lado u otro del cursor
-            texto = texto_hora = datetime.strftime(cursor_t, "%x %H:%M:%S")
-            for curva in self.curvas:
-                valor = curva.valores[cursor_i]
-                texto += '  ' + str(round(float(valor),1))
-            texto_ext = ct.text_extents(texto)[4]
-            y = self.wrect.height - font_desc
-            if self.cursor_x > self.wrect.width/2:
-                ct.move_to(x - texto_ext, y)
-            else:
-                ct.move_to(x, y)
-            ct.show_text(texto_hora)
-            for curva in self.curvas   :
-                valor = curva.valores[cursor_i]
-                ct.set_source_rgb(*curva.color)
-                ct.show_text( '  ' + str(round(float(valor),1)))
+        if len(self.tiempos):
+            cursor_t = self.tiempos[0] - timedelta(seconds = secs)
+            if cursor_t >= self.tiempos[-1] and cursor_t <= self.tiempos[0] and self.cursor_on:
+                # Linea vertical
+                ct.set_line_width(0.8)
+                ct.set_source_rgb(*Color.negro)
+                x = self.cursor_x
+                ct.move_to(x, self.b_sup)
+                ct.rel_line_to(0, self.g_alto)
+                ct.stroke()
+                # Indice para encontrar los valores Y apuntados por el cursor
+                cursor_i = 0
+                dt_min = float('inf')
+                for i,t in enumerate(self.tiempos):
+                    dt = abs((cursor_t - t).total_seconds())
+                    if  dt < dt_min:
+                        dt_min = dt
+                        cursor_i = i
+                # Texto a mostrar
+                # primero se calcula su extension para colocarlo a un lado u otro del cursor
+                texto = texto_hora = datetime.strftime(cursor_t, "%x %H:%M:%S")
+                for curva in self.curvas:
+                    valor = curva.valores[cursor_i]
+                    texto += '  ' + str(round(float(valor),1))
+                texto_ext = ct.text_extents(texto)[4]
+                y = self.wrect.height - font_desc
+                if self.cursor_x > self.wrect.width/2:
+                    ct.move_to(x - texto_ext, y)
+                else:
+                    ct.move_to(x, y)
+                ct.show_text(texto_hora)
+                for curva in self.curvas   :
+                    valor = curva.valores[cursor_i]
+                    ct.set_source_rgb(*curva.color)
+                    ct.show_text( '  ' + str(round(float(valor),1)))
 
         # Leyenda
         ct.move_to(self.b_izq, self.b_sup - font_desc)
@@ -250,6 +253,8 @@ class StripChart(Gtk.DrawingArea):
             curva.valores.clear()
             curva.maximo = float('-inf')
             curva.minimo = float('inf')
+        self.queue_draw()
+
 
 def test():
     """ Run an example.
