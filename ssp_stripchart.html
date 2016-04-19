@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Python: module ssp_stripchart</title>
+	<meta name="generator" content="LibreOffice 5.0.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changedby" content="Sergio Soriano Peiró"/>
+	<meta name="changed" content="2016-04-11T17:02:57.552649601"/>
+	<meta name="" content=""/>
+	<style type="text/css">
+		tt.cjk { font-family: "Nimbus Mono L", monospace }
+	</style>
+</head>
+<body lang="es-ES" bgcolor="#f0f0f8" dir="ltr">
+<table width="100%" cellpadding="2" cellspacing="0" style="page-break-before: always">
+	<tr bgcolor="#7799ee" valign="bottom">
+		<td style="border: none; padding: 0cm">
+			<p>&nbsp;<br/>
+<font color="#ffffff">&nbsp;</font><font color="#ffffff"><font face="helvetica, arial"><br/>
+</font></font><strong><font color="#ffffff"><font face="helvetica, arial"><font size="2" style="font-size: 10pt">ssp_stripchart</font></font></font></strong></p>
+		</td>
+		<td style="border: none; padding: 0cm">
+			<p align="right"><font color="#ffffff"><font face="helvetica, arial"><a href="../ssp_stripchart">index</a><br/>
+<a href="ssp_stripchart.py">/home/sergio/GDRIVE/dev/python/ssp_stripchart/ssp_stripchart.py</a></font></font></p>
+		</td>
+	</tr>
+</table>
+<p><tt class="western">A&nbsp;GTK+&nbsp;widget&nbsp;for&nbsp;graphical&nbsp;representation&nbsp;of&nbsp;values&nbsp;over&nbsp;time.<br/>
+&nbsp;<br/>
+Requeriments:&nbsp;PyGObject&nbsp;(see&nbsp;https://wiki.gnome.org/Projects/PyGObject).<br/>
+For&nbsp;python&nbsp;2&nbsp;and&nbsp;3.<br/>
+Run&nbsp;this&nbsp;in&nbsp;a&nbsp;python&nbsp;console&nbsp;for&nbsp;an&nbsp;example:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;ssp_stripchart<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ssp_stripchart.<a href="#-test">test</a>()</tt></p>
+<table width="100%" cellpadding="2" cellspacing="0">
+	<tr bgcolor="#aa55cc">
+		<td colspan="3" valign="bottom" style="border: none; padding: 0cm">
+			<p>&nbsp;<br/>
+<strong><font color="#ffffff"><font face="helvetica, arial"><font size="1" style="font-size: 7pt">Modules</font></font></font></strong></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#aa55cc" style="border: none; padding: 0cm">
+			<p><tt class="western">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></p>
+		</td>
+		<td style="border: none; padding: 0cm">
+			<p style="margin-bottom: 0cm">&nbsp;</p>
+			<table width="100%" cellpadding="2" cellspacing="2">
+				<tr valign="top">
+					<td width="25%" style="border: none; padding: 0cm">
+						<p><a href="gi.repository.Gdk.html">gi.repository.Gdk</a></p>
+					</td>
+					<td width="25%" style="border: none; padding: 0cm">
+						<p><a href="gi.repository.Gtk.html">gi.repository.Gtk</a></p>
+					</td>
+					<td width="25%" style="border: none; padding: 0cm"></td>
+					<td width="25%" style="border: none; padding: 0cm"></td>
+				</tr>
+			</table>
+			<p><br/>
+<br/>
+
+			</p>
+		</td>
+		<td width="100%" style="border: none; padding: 0cm"></td>
+	</tr>
+</table>
+<table width="100%" cellpadding="2" cellspacing="0">
+	<tr bgcolor="#ee77aa">
+		<td colspan="3" valign="bottom" style="border: none; padding: 0cm">
+			<p>&nbsp;<br/>
+<strong><font color="#ffffff"><font face="helvetica, arial"><font size="1" style="font-size: 7pt">Classes</font></font></font></strong></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#ee77aa" style="border: none; padding: 0cm">
+			<p><tt class="western">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></p>
+		</td>
+		<td style="border: none; padding: 0cm">
+			<p>&nbsp;</p>
+		</td>
+		<td width="100%" style="border: none; padding: 0cm">
+			<dl>
+				<dt><font face="helvetica, arial"><a href="#StripChart">StripChart</a>
+				</font>
+				</dt><dt>
+				<font face="helvetica, arial"><a href="#Color">Color</a> </font>
+				</dt><dt style="margin-bottom: 0.5cm">
+				<font face="helvetica, arial"><a href="#Curva">Curva</a> </font>
+				</dt></dl>
+			<table width="100%" cellpadding="2" cellspacing="0">
+				<tr bgcolor="#ffc8d8">
+					<td colspan="3" valign="bottom" style="border: none; padding: 0cm">
+						<p><a name="Color"></a>&nbsp;<br/>
+<font color="#000000"><font face="helvetica, arial">class
+						</font></font><strong><font color="#000000"><font face="helvetica, arial">Color</font></font></strong></p>
+					</td>
+				</tr>
+				<tr bgcolor="#ffc8d8">
+					<td rowspan="2" style="border: none; padding: 0cm">
+						<p><tt class="western">&nbsp;&nbsp;&nbsp;</tt></p>
+					</td>
+					<td colspan="2" style="border: none; padding: 0cm">
+						<p><tt class="western">Enum&nbsp;containing&nbsp;color&nbsp;definitions&nbsp;as&nbsp;(r,&nbsp;g,&nbsp;b)<br/>
+where&nbsp;r,&nbsp;g,&nbsp;b&nbsp;are&nbsp;floats&nbsp;from&nbsp;0.0&nbsp;to&nbsp;1.0<br/>
+&nbsp;</tt></p>
+					</td>
+				</tr>
+				<tr>
+					<td style="border: none; padding: 0cm">
+						<p>&nbsp;</p>
+					</td>
+					<td width="100%" style="border: none; padding: 0cm">
+						<p>Data and other attributes defined here:</p>
+						<dl>
+							<dt style="margin-bottom: 0.5cm"><strong>asulito</strong> =
+							(0.11764705882352941, 0.5647058823529412, 1.0)</dt><dt style="margin-bottom: 0.5cm">
+							<strong>fondo</strong> = (1.0, 0.9568627450980393,
+							0.9333333333333333)</dt><dt style="margin-bottom: 0.5cm">
+							<strong>gris</strong> = (0.3, 0.3, 0.3)</dt><dt style="margin-bottom: 0.5cm">
+							<strong>morado</strong> = (0.5019607843137255, 0.0,
+							0.5019607843137255)</dt><dt style="margin-bottom: 0.5cm">
+							<strong>naranja</strong> = (1.0, 0.30980392156862746, 0.0)</dt><dt style="margin-bottom: 0.5cm">
+							<strong>negro</strong> = (0, 0, 0)</dt><dt>
+							<strong>rojo</strong> = (1.0, 0, 0)</dt></dl>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" cellpadding="2" cellspacing="0">
+				<tr bgcolor="#ffc8d8">
+					<td colspan="3" valign="bottom" style="border: none; padding: 0cm">
+						<p><a name="Curva"></a>&nbsp;<br/>
+<font color="#000000"><font face="helvetica, arial">class
+						</font></font><strong><font color="#000000"><font face="helvetica, arial">Curva</font></font></strong></p>
+					</td>
+				</tr>
+				<tr bgcolor="#ffc8d8">
+					<td rowspan="2" style="border: none; padding: 0cm">
+						<p><tt class="western">&nbsp;&nbsp;&nbsp;</tt></p>
+					</td>
+					<td colspan="2" style="border: none; padding: 0cm">
+						<p><tt class="western">Each&nbsp;of&nbsp;the&nbsp;curves&nbsp;in&nbsp;the&nbsp;graph&nbsp;to&nbsp;represent.<br/>
+&nbsp;<br/>
+It&nbsp;consists&nbsp;of&nbsp;a&nbsp;title,&nbsp;a&nbsp;color,&nbsp;a&nbsp;queue&nbsp;to&nbsp;store&nbsp;the&nbsp;values&nbsp;and&nbsp;two<br/>
+fields&nbsp;containing&nbsp;the&nbsp;maximum&nbsp;and&nbsp;minimum&nbsp;values.<br/>
+&nbsp;</tt></p>
+					</td>
+				</tr>
+				<tr>
+					<td style="border: none; padding: 0cm">
+						<p>&nbsp;</p>
+					</td>
+					<td width="100%" style="border: none; padding: 0cm">
+						<p>Data and other attributes defined here:</p>
+						<dl>
+							<dt style="margin-bottom: 0.5cm"><strong>color</strong> = (0,
+							0, 0)</dt><dt style="margin-bottom: 0.5cm">
+							<strong>maximo</strong> = -inf</dt><dt style="margin-bottom: 0.5cm">
+							<strong>minimo</strong> = inf</dt><dt style="margin-bottom: 0.5cm">
+							<strong>titulo</strong> = ''</dt><dt>
+							<strong>valores</strong> = None</dt></dl>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" cellpadding="2" cellspacing="0">
+				<tr bgcolor="#ffc8d8">
+					<td colspan="3" valign="bottom" style="border: none; padding: 0cm">
+						<p><a name="StripChart"></a>&nbsp;<br/>
+<font color="#000000"><font face="helvetica, arial">class
+						</font></font><strong><font color="#000000"><font face="helvetica, arial">StripChart</font></font></strong><font color="#000000"><font face="helvetica, arial">(<a href="gi.repository.Gtk.html#DrawingArea">gi.repository.Gtk.DrawingArea</a>)</font></font></p>
+					</td>
+				</tr>
+				<tr bgcolor="#ffc8d8">
+					<td rowspan="2" style="border: none; padding: 0cm">
+						<p><tt class="western">&nbsp;&nbsp;&nbsp;</tt></p>
+					</td>
+					<td colspan="2" style="border: none; padding: 0cm">
+						<p><tt class="western">:Constructors:<br/>
+&nbsp;<br/>
+::<br/>
+&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="gi.repository.Gtk.html#DrawingArea">DrawingArea</a>(**properties)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#StripChart-new">new</a>()<br/>
+&nbsp;</tt></p>
+					</td>
+				</tr>
+				<tr>
+					<td style="border: none; padding: 0cm">
+						<p>&nbsp;</p>
+					</td>
+					<td width="100%" style="border: none; padding: 0cm">
+						<dl>
+							<dt>Method resolution order: 
+							</dt><dd>
+							<a href="#StripChart">StripChart</a> 
+							</dd><dd>
+							<a href="gi.repository.Gtk.html#DrawingArea">gi.repository.Gtk.DrawingArea</a>
+														</dd><dd>
+							<a href="gi.overrides.Gtk.html#Widget">gi.overrides.Gtk.Widget</a>
+														</dd><dd>
+							gi.repository.Gtk.Widget 
+							</dd><dd>
+							<a href="gi.repository.GObject.html#InitiallyUnowned">gi.repository.GObject.InitiallyUnowned</a>
+														</dd><dd>
+							<a href="gi.overrides.GObject.html#Object">gi.overrides.GObject.Object</a>
+														</dd><dd>
+							gi.repository.GObject.Object 
+							</dd><dd>
+							gi._gobject._gobject.GObject 
+							</dd><dd>
+							<a href="gi.repository.Atk.html#ImplementorIface">gi.repository.Atk.ImplementorIface</a>
+														</dd><dd>
+							<a href="gi.repository.Gtk.html#Buildable">gi.repository.Gtk.Buildable</a>
+														</dd><dd>
+							gobject.GInterface 
+							</dd><dd style="margin-bottom: 0.5cm">
+							<a href="__builtin__.html#object">__builtin__.object</a> 
+							</dd><hr/>
+
+						</dl>
+						<p>Methods defined here:</p>
+						<dl>
+							<dt><a name="StripChart-__init__"></a><strong>__init__</strong>(self,
+							ancho<font color="#909090">=500</font>, alto<font color="#909090">=250</font>,
+							tipo_linea<font color="#909090">=True</font>, font_face<font color="#909090">=''</font>,
+							font_size<font color="#909090">=11</font>)</dt><dd style="margin-bottom: 0.5cm">
+							<tt class="western">Constructor.<br/>
+Parameters:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ancho,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;alto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;and&nbsp;height&nbsp;of&nbsp;the&nbsp;widget&nbsp;in&nbsp;pixels.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;tipo_linea:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define&nbsp;if&nbsp;the&nbsp;curves&nbsp;are&nbsp;drawn&nbsp;with&nbsp;lines&nbsp;connecting&nbsp;values&nbsp;(True)&nbsp;or<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drawing&nbsp;values&nbsp;as&nbsp;small&nbsp;circles&nbsp;(False).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;font_face,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;font_size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;and&nbsp;font&nbsp;size&nbsp;to&nbsp;use&nbsp;for&nbsp;text.</tt></dd><dt>
+							<a name="StripChart-add_curva"></a><strong>add_curva</strong>(self,
+							titulo, color)</dt><dd style="margin-bottom: 0.5cm">
+							<tt class="western">Add&nbsp;a&nbsp;new&nbsp;curve&nbsp;values&nbsp;to&nbsp;represent.<br/>
+You&nbsp;can&nbsp;add&nbsp;as&nbsp;many&nbsp;curves&nbsp;are&nbsp;desired.<br/>
+Parameters:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;titulo:&nbsp;title&nbsp;for&nbsp;the&nbsp;curve&nbsp;(type&nbsp;string).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;color:&nbsp;&nbsp;color&nbsp;for&nbsp;the&nbsp;curve&nbsp;(type&nbsp;<a href="#Color">Color</a>).</tt></dd><dt>
+							<a name="StripChart-add_valores"></a><strong>add_valores</strong>(self,
+							hora, *valores)</dt><dd style="margin-bottom: 0.5cm">
+							<tt class="western">Adds&nbsp;values&nbsp;for&nbsp;the&nbsp;different&nbsp;curves&nbsp;at&nbsp;a&nbsp;particular&nbsp;time.<br/>
+Parameters:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;hora:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;coordinate&nbsp;for&nbsp;the&nbsp;added&nbsp;values&nbsp;(type&nbsp;datetime).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;valores:&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;values&nbsp;to&nbsp;be&nbsp;displayed&nbsp;in&nbsp;the&nbsp;order&nbsp;of&nbsp;definition&nbsp;of&nbsp;the&nbsp;curves<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;a&nbsp;value&nbsp;for&nbsp;each&nbsp;curve.</tt></dd><dt>
+							<a name="StripChart-clear"></a><strong>clear</strong>(self)</dt><dd style="margin-bottom: 0.5cm">
+							<tt class="western">Delete&nbsp;curve&nbsp;values&nbsp;and&nbsp;times.</tt></dd><dt>
+							<a name="StripChart-set_ejes"></a><strong>set_ejes</strong>(self,
+							duracion, val_min, val_max, sep_lineas)</dt><dd style="margin-bottom: 0.5cm">
+							<tt class="western">Defines&nbsp;the&nbsp;coordinate&nbsp;axes&nbsp;for&nbsp;graphing.<br/>
+Parameters:<br/>
+duracion:&nbsp;&nbsp;&nbsp;X&nbsp;axis&nbsp;width&nbsp;in&nbsp;seconds.<br/>
+val_min,<br/>
+val_max:&nbsp;&nbsp;&nbsp;&nbsp;extreme&nbsp;values&nbsp;of&nbsp;the&nbsp;Y&nbsp;axis.<br/>
+sep_lineas:&nbsp;distance&nbsp;in&nbsp;units&nbsp;of&nbsp;value&nbsp;between&nbsp;secondary&nbsp;lines&nbsp;of&nbsp;Y&nbsp;axis.</tt></dd><hr/>
+
+						</dl>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="2" cellspacing="0">
+	<tr bgcolor="#eeaa77">
+		<td colspan="3" valign="bottom" style="border: none; padding: 0cm">
+			<p>&nbsp;<br/>
+<strong><font color="#ffffff"><font face="helvetica, arial"><font size="1" style="font-size: 7pt">Functions</font></font></font></strong></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#eeaa77" style="border: none; padding: 0cm">
+			<p><tt class="western">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></p>
+		</td>
+		<td style="border: none; padding: 0cm">
+			<p>&nbsp;</p>
+		</td>
+		<td width="100%" style="border: none; padding: 0cm">
+			<dl>
+				<dt><a name="-test"></a><strong>test</strong>()</dt><dd>
+				<tt class="western">Run&nbsp;an&nbsp;example.</tt></dd></dl>
+		</td>
+	</tr>
+</table>
+<p><br/>
+<br/>
+
+</p>
+</body>
+</html>
