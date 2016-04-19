@@ -7,6 +7,7 @@ For python 2 and 3.
 Run this in a python console for an example:
     import ssp_stripchart
     ssp_stripchart.test()
+
 """
 
 from gi.repository import Gtk, Gdk
@@ -44,6 +45,8 @@ class StripChart(Gtk.DrawingArea):
     """Implements a widget for graphical representation of values over time.
 
     """
+
+    __gtype_name__ = 'StripChart'
 
     def __init__(self, ancho=500, alto=250, tipo_linea=True, font_face= '', font_size=11):
         """Constructor.
