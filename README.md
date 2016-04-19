@@ -9,4 +9,4 @@ Run this in a python console for an example:
 import ssp_stripchart
 ssp_stripchart.test()
 ```
-See details in ssp_stripchart.html.
+See details in __ssp_stripchart.html__
